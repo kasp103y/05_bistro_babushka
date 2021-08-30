@@ -11,8 +11,7 @@ img {
 }
 
 header {
-  background-color: rgb(255, 195, 82);
-  padding: 2rem;
+  padding: 0.5rem;
 }
 
 header nav ul {
@@ -41,7 +40,6 @@ img {
 }
 
 .menu {
-  border: 2px solid orange;
   border-radius: 0.5rem;
   transition: 0.5ms ease-in;
 }
@@ -58,23 +56,29 @@ main {
   padding: 2rem;
   margin: 2rem;
   border-radius: 0.5rem;
+}
+
+.menu:nth-child(odd) {
   background-color: #fff;
 }
 
 .menu {
   padding: 0.5rem;
+  background-color: lightgray;
 }
 
 h1,
 h2 {
   text-align: center;
   color: #fff;
+  font-weight: bold;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
   padding: 0 15rem;
+  margin: 1rem 0;
 }
 
 button {
@@ -86,7 +90,13 @@ button {
   text-decoration: none;
   font-size: 1.5rem;
   transition: 100ms ease-in;
+  border: 0.125rem solid #fff;
 }
 button:hover {
   outline: 0.125rem solid #fff;
+  outline-offset: 0.2rem;
+}
+
+.mad_img {
+  border-radius: 0.5rem;
 }

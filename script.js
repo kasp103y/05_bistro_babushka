@@ -1,17 +1,17 @@
 const madTemplate = document.querySelector("template");
-const container = document.querySelector(".container");
+
 const header = document.querySelector("header h2");
+const url = "https://babushka-dd8a.restdb.io/rest/menu";
 
 const options = { headers: { "x-apikey": "600ec2fb1346a1524ff12de4" } };
 
 window.addEventListener("DOMContentLoaded", start);
 let retter;
-let filter = "menu";
+let filter = "alle";
 
 function start() {
-  const url = "https://babushka-dd8a.restdb.io/rest/menu";
   const filterKnapper = document.querySelectorAll("nav button");
-  console.log(filterKnapper);
+  //console.log(filterKnapper);
 
   filterKnapper.forEach((knap) => knap.addEventListener("click", filtrerMenu));
   //EventListener vælger hvad for et filter der er aktivt
@@ -20,7 +20,9 @@ function start() {
 
 function filtrerMenu() {
   filter = this.dataset.mad;
+  //This = det man trykker på og bestemmer kategori
   //Sætter filter på værdien menu (Alle retter)
+  console.log(this);
 
   document.querySelector(".valgt").classList.remove("valgt");
   //Fjerne class fra forrige knap
@@ -30,23 +32,26 @@ function filtrerMenu() {
 
   header.textContent = this.textContent;
   //This henviser til klikket knap og ændrer overskrift til det der står i knappen
-  console.log(this);
 }
 
 async function hentData(url) {
   //Promise - data lover program at komme med date, imen det køre videre
   const result = await fetch(url, options);
-  const json = await result.json();
-  console.log(json);
-  vis(json);
+  retter = await result.json();
+  console.log(retter);
+  vis();
 }
 
-function vis(retter) {
-  header.textContent = this.textContent;
+function vis() {
+  const container = document.querySelector(".container");
   container.textContent = ""; //Ryd container inden loop
+  //console.log(filter);
 
   retter.forEach((ret) => {
-    if (filter == ret.mad || filter == "menu") {
+    if (filter == ret.kategori || filter == "alle") {
+      //Er filter det samme som objekt? || betyder eller
+      //Bestemt kategori eller alle objekter
+      console.log(filter);
       let klon = madTemplate.cloneNode(true).content;
       const md = "-md.jpg";
       //Placer i HTML
