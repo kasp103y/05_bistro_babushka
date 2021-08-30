@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+header {
+  background-color: rgb(255, 195, 82);
+  padding: 2rem;
+}
+
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+
+  color: white;
+}
+
+li {
+  list-style: none;
+}
+
+body {
+  background-image: url(babushka.jpg);
+  background-size: cover;
+  background-position: top 60%;
+  background-attachment: fixed;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  background-size: cover;
+}
+
+.menu {
+  border: 2px solid orange;
+  border-radius: 0.5rem;
+  transition: 0.5ms ease-in;
+}
+
+main {
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  padding: 2rem;
+  margin: 2rem;
+  border-radius: 0.5rem;
+  background-color: #fff;
+}
+
+.menu {
+  padding: 0.5rem;
+}
+
+h1,
+h2 {
+  text-align: center;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15rem;
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+  padding: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1.5rem;
+  transition: 100ms ease-in;
+}
+button:hover {
+  outline: 0.125rem solid #fff;
+}
