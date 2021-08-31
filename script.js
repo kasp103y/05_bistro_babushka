@@ -61,6 +61,9 @@ function vis() {
       klon.querySelector(".details").textContent = ret.kortbeskrivelse;
       klon.querySelector(".pris").textContent = ret.pris + " kr";
       klon.querySelector("img").src = "medium/" + ret.billednavn + md;
+      klon.querySelector("article").addEventListener("click", () => {
+        location.href = "single_view.html?id=" + ret._id;
+      });
 
       //klon.querySelector("img").src = "faces/" + ret.billede;
       container.appendChild(klon);

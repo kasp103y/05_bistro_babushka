@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <nav>
+        <button class="back">Tilbage</button>
+      </nav>
+      <section class="container" id="single_container">
+        <article class="menu" id="single_menu">
+          <h2 class="single_h2"></h2>
+          <img class="mad_img" src="" alt="" />
+          <p class="ret"></p>
+          <p class="details"></p>
+          <p class="pris"></p>
+          <button class="bestil">Bestil</button>
+        </article>
+      </section>
+    </main>
+    <footer></footer>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const id = urlParams.get("id");
+      //console.log(id);
+      let ret;
+
+      //const header = document.querySelector("header h2");
+      const url = "https://babushka-dd8a.restdb.io/rest/menu/";
+      const options = { headers: { "x-apikey": "600ec2fb1346a1524ff12de4" } };
+
+      document.addEventListener("DOMContentLoaded", hentData);
+
+      async function hentData() {
+        //Promise - data lover program at komme med date, imen det køre videre
+        const result = await fetch(url + id, options);
+        ret = await result.json();
+        console.log(ret);
+        vis();
+      }
+
+      function vis() {
+        const md = "-md.jpg";
+
+        document.querySelector(".single_h2").textContent = ret.navn;
+        document.querySelector(".ret").textContent = ret.kategori;
+        document.querySelector(".details").textContent = ret.langbeskrivelse;
+        document.querySelector(".pris").textContent = ret.pris + " kr";
+        document.querySelector("img").src = "medium/" + ret.billednavn + md;
+      }
+
+      document.querySelector(".back").addEventListener("click", () => {
+        window.history.back();
+      });
+    </script>
+  </body>
+</html>
