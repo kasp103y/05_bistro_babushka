@@ -1,4 +1,7 @@
 const madTemplate = document.querySelector("template");
+const headingOne = document.querySelector("h1");
+const popUp = document.querySelector("#popup");
+const buttonLuk = document.querySelector("#popup button");
 
 const header = document.querySelector("header h2");
 const url = "https://babushka-dd8a.restdb.io/rest/menu";
@@ -69,4 +72,17 @@ function vis() {
       container.appendChild(klon);
     }
   });
+}
+
+headingOne.addEventListener("click", openPopup);
+buttonLuk.addEventListener("click", buttonClose);
+
+function openPopup() {
+  //console.log("Tjek heading");
+  popUp.style.opacity = "1";
+  popUp.style.pointerEvents = "all";
+}
+function buttonClose() {
+  popUp.style.opacity = "0";
+  popUp.style.pointerEvents = "none";
 }

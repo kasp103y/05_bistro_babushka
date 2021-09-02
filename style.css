@@ -8,6 +8,7 @@ img {
   width: 100%;
   height: auto;
   aspect-ratio: 16/9;
+  background-size: cover;
   display: block;
 }
 
@@ -68,6 +69,7 @@ main {
 .menu {
   padding: 2rem;
   transition: 500ms ease-in-out;
+  cursor: pointer;
 }
 
 .menu:hover {
@@ -80,12 +82,29 @@ main {
   box-shadow: none;
 }
 
+.pris {
+  border-bottom: 0.25rem solid #ea6226;
+
+  display: inline-block;
+  padding: 0.2rem;
+}
+
 h1 {
   text-align: center;
   color: #fff;
   font-size: 5rem;
   font-family: "Bebas Neue", cursive;
+  cursor: pointer;
+  transition: 250ms ease-in-out;
 }
+
+h1:hover {
+  text-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  color: #ffffff;
+}
+
 h2 {
   text-align: center;
   color: #fff;
@@ -128,7 +147,8 @@ p {
   justify-content: center;
 }
 
-.bestil {
+.bestil,
+#popup button {
   background: none;
   border: none;
   color: #ea6226;
@@ -140,9 +160,11 @@ p {
   outline: 0.125rem solid #ea6226;
   font-family: "Bebas Neue";
   margin-top: 2rem;
+  cursor: pointer;
 }
 
-.bestil:hover {
+.bestil:hover,
+#popup button:hover {
   background-color: #ea6226;
 
   color: #fff;
@@ -168,6 +190,7 @@ nav button {
   transition: 100ms ease-in;
   outline: 0.125rem solid #fff;
   font-family: "Bebas Neue";
+  cursor: pointer;
 }
 nav button:hover {
   outline-offset: 0.125rem;
@@ -183,6 +206,28 @@ nav button:hover {
 
 .mad_img {
   border-radius: 0.5rem;
+}
+
+#popup {
+  width: 80vw;
+  height: 50vh;
+  opacity: 0;
+  pointer-events: none;
+  background-color: white;
+  border-radius: 0.5rem;
+  position: fixed;
+  top: 0;
+  padding: 2rem;
+
+  margin: 10rem auto;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  transition: 500ms ease-in-out;
+}
+
+#popup article h2 {
+  color: black;
 }
 
 @media (max-width: 600px) {
