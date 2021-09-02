@@ -130,6 +130,7 @@ footer p {
 p {
   font-family: "Oswald", sans-serif;
   font-size: 1.4rem;
+  line-height: 2.5rem;
 }
 .ret {
   text-transform: capitalize;
