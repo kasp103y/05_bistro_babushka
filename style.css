@@ -164,6 +164,10 @@ p {
   cursor: pointer;
 }
 
+.bestil {
+  margin-left: 2rem;
+}
+
 .bestil:hover,
 #popup button:hover {
   background-color: #ea6226;
@@ -258,6 +262,13 @@ nav button:hover {
   p {
     font-size: 1rem;
     line-height: 1.7rem;
+  }
+
+  .bestil {
+    font-size: 1.2rem;
+    outline: none;
+    border-bottom: 0.25rem solid #ea6226;
+    padding: 0.2rem;
   }
 
   .ret {
