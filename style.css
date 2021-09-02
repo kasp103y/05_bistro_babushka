@@ -219,7 +219,7 @@ nav button:hover {
 }
 
 #popup {
-  width: 80vw;
+  width: 90vw;
 
   opacity: 0;
   pointer-events: none;
