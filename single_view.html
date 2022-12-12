@@ -70,7 +70,7 @@
         const result = await fetch(url + id, options);
         ret = await result.json();
         console.log(ret);
-        vis();
+        vis(id);
       }
 
       function vis() {
